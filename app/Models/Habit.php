@@ -61,7 +61,7 @@ class Habit extends Model
      */
     public function todayLog(): HasOne
     {
-        return $this->hasOne(HabitLog::class)->where('logged_date', now()->toDateString());
+        return $this->hasOne(HabitLog::class)->whereDate('logged_date', now()->toDateString());
     }
 
     /**
